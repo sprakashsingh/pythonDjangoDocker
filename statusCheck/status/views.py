@@ -7,7 +7,7 @@ from rest_framework.response import Response
 
 class TagListAPIView(generics.ListAPIView):
     def list(self, request):
-        serializer_data = datetime.now().second
+        serializer_data = datetime.now().second % 10
         print(serializer_data)
         serializer = serializers.Serializer({"value":serializer_data})
         stat = status.HTTP_200_OK
